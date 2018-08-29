@@ -20,9 +20,6 @@ export default class App extends React.Component {
   }
   
   async createNotificationListeners() {
-    /*
-    * Triggered when a particular notification has been received in foreground
-    * */
     this.notificationListener = firebase.notifications().onNotification((notification) => {
         const { title, body } = notification;
         this.showAlert(title, body);
@@ -34,6 +31,8 @@ export default class App extends React.Component {
     this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
         const { title, body } = notificationOpen.notification;
         this.showAlert(title, body);
+
+        // handle deeplink here
     });
   
     /*
@@ -43,7 +42,10 @@ export default class App extends React.Component {
     if (notificationOpen) {
         const { title, body } = notificationOpen.notification;
         this.showAlert(title, body);
+
+        // handle deeplink here also
     }
+
     /*
     * Triggered for data only payload in foreground
     * */
@@ -53,21 +55,22 @@ export default class App extends React.Component {
       this.showAlert(JSON.stringify(message), JSON.stringify(message));
     
       const notification = new firebase.notifications.Notification()
-  .setNotificationId('notification foreground')
-  .setTitle(JSON.parse(message._data.title).en)
-  .setBody(JSON.parse(message._data.body).en.message)
-  .setData({
-    key1: 'value1',
-    key2: 'value2',
-  });
-  notification
-  .android.setChannelId('channelId')
-  .android.setSmallIcon('ic_launcher')
-  .android.setBigPicture(JSON.parse(message._data.body).en.message);
+      .setNotificationId('notification foreground')
+      .setTitle(JSON.parse(message._data.title).en)
+      .setBody(JSON.parse(message._data.body).en.message)
+      .setData({
+        key1: 'value1',
+        key2: 'value2',
+      });
+      notification
+      .android.setChannelId('channelId')
+      .android.setSmallIcon('ic_launcher')
+      .android.setBigPicture(JSON.parse(message._data.body).en.message);
 
-  firebase.notifications().displayNotification(notification)
+      firebase.notifications().displayNotification(notification)
     });
   }
+  
   showAlert(title, body) {
     Alert.alert(
       title, body,
