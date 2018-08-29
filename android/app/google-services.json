@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "417519101808",
+    "firebase_url": "https://notification-cc3a2.firebaseio.com",
+    "project_id": "notification-cc3a2",
+    "storage_bucket": "notification-cc3a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417519101808:android:56bf5ab89f100221",
+        "android_client_info": {
+          "package_name": "com.shobu.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417519101808-ag4hjeondilpoalfsaki0og0c6dv8vsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUfT8zb54wactzFFss38i6WbfcRkjiNsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

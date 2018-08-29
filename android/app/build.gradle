@@ -108,7 +108,7 @@ android {
   compileSdkVersion 27
 
   defaultConfig {
-    applicationId "com.invertase.rnfirebasestarter"
+    applicationId "com.shobu.notification"
     minSdkVersion 18
     targetSdkVersion 27
     versionCode 1
@@ -177,6 +177,7 @@ dependencies {
   implementation "com.google.firebase:firebase-storage:16.0.1"
   implementation "com.google.firebase:firebase-messaging:17.1.0"
   implementation "com.google.firebase:firebase-perf:16.0.0"
+  implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
 
   implementation "com.facebook.react:react-native:+"
   implementation "com.android.support:appcompat-v7:27.1.1"

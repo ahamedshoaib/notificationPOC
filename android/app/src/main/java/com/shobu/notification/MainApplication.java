@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.shobu.notification;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
